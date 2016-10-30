@@ -140,6 +140,8 @@ src/main.js                           // js入口文件
 ```javascript
 alert('test')
 ```
+```
 1.运行程序执行命令：npm run dev
 2.然后打开网址：http://localhost:3000/admin/app/
 3.如果浏览器弹出test，说明我们的开发环境已经搭建通过。
+```
