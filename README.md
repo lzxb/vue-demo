@@ -121,7 +121,7 @@ package.json                          // 自定义命令，启动程序，自动
 ```
 
 ### 8.测试编译
-src/template/index.html               // html入口文件
+**src/template/index.html**
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -136,7 +136,7 @@ src/template/index.html               // html入口文件
 
 </html>
 ```
-src/main.js                           // js入口文件
+**src/main.js**
 ```javascript
 alert('test')
 ```
