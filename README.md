@@ -57,7 +57,7 @@ npm install -g gulp
 |-- server.js              // 代理服务器配置
 |-- README.md              // 项目说明
 |-- package.json           // 配置项目相关信息，通过执行 npm init 命令创建
-|__
+.
 </pre>
 
 ### 4.安装开发环境依赖模块 npm install --save-dev 模块名
@@ -101,6 +101,9 @@ vue                                   // 构建用户界面的 渐进式框架
 vue-router                            // 路由
 vuex                                  // 组件状态管理
 ```
+
+### 构建开发环境
+1.基本信息配置 // config/index.js
 
 ### 6.页面规划
 ```
