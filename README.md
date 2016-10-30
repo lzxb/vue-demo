@@ -145,3 +145,9 @@ alert('test')
 2.然后打开网址：http://localhost:3000/admin/app/
 3.如果浏览器弹出test，说明我们的开发环境已经搭建通过。
 ```
+**package.json自定义命令说明**
+```
+npm run dev      开发环境
+npm run dev:test 将代码打包到测试服务器
+npm run dev:dist 将代码打包到正式服务器
+```
