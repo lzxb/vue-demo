@@ -1,4 +1,3 @@
-# 简单的vue2入门的demo
 ### 1.安装开发环境
 **vs code** https://code.visualstudio.com 
 ```
@@ -29,21 +28,34 @@ npm install -g gulp
 |-- config.js              // 开发的配置文件，设置代理服务器地址，自动部署到服务器的帐号配置等
 |-- src                    // 源码目录
 |   |-- components         // 公共组件
+|       |-- header.vue     // 页面头部公共组件
+|       |-- index.js       // 加载各种公共组件
 |   |-- config             // 路由配置和程序的基本信息配置
-|   |-- css                // 公共css文件
-|   |-- iconfont           // 公共字体图标
+|       |-- routes.js      // 配置页面路由
+|   |-- css                // 各种css文件
+|       |-- common.css     // 全局通用css文件
+|   |-- iconfont           // 各种字体图标
 |   |-- images             // 公共图片
-|   |-- less               // 公共less文件
+|   |-- less               // 各种less文件
+|       |-- common.less    // 全局通用less文件
 |   |-- pages              // 页面组件
+|       |-- home           // 个人中心
+|       |-- index          // 网站首页
+|       |-- login          // 登录
+|       |-- signout        // 退出
 |   |-- store              // vuex的状态管理
-|   |-- template           // 入口html模板
+|       |-- index.js       // 加载各种store模块
+|       |-- user.js        // 用户store
+|   |-- template           // 各种html文件
+|       |-- index.html     // 程序入口html文件
 |   |-- util               // 公共的js方法，vue的mixin混合
-|   |-- main.js            // 程序入口文件，加载各种公共组件
 |   |-- app.vue            // 页面入口文件
+|   |-- main.js            // 程序入口文件，加载各种公共组件
 |-- .babelrc               // ES6语法编译配置
 |-- gulpfile.js            // 启动，打包，部署，自动化构建
 |-- webpack.config.js      // 程序打包配置
 |-- server.js              // 代理服务器配置
+|-- README.md              // 项目说明
 |-- package.json           // 配置项目相关信息，通过执行 npm init 命令创建
 |__
 </pre>
