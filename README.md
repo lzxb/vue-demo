@@ -25,38 +25,39 @@ npm install -g gulp
 ### 3.创建项目目录 test-demo 
 <pre>
 .
-|-- config.js              // 开发的配置文件，设置代理服务器地址，自动部署到服务器的帐号配置等
-|-- src                    // 源码目录
-|   |-- components         // 公共组件
-|       |-- header.vue     // 页面头部公共组件
-|       |-- index.js       // 加载各种公共组件
-|   |-- config             // 路由配置和程序的基本信息配置
-|       |-- routes.js      // 配置页面路由
-|   |-- css                // 各种css文件
-|       |-- common.css     // 全局通用css文件
-|   |-- iconfont           // 各种字体图标
-|   |-- images             // 公共图片
-|   |-- less               // 各种less文件
-|       |-- common.less    // 全局通用less文件
-|   |-- pages              // 页面组件
-|       |-- home           // 个人中心
-|       |-- index          // 网站首页
-|       |-- login          // 登录
-|       |-- signout        // 退出
-|   |-- store              // vuex的状态管理
-|       |-- index.js       // 加载各种store模块
-|       |-- user.js        // 用户store
-|   |-- template           // 各种html文件
-|       |-- index.html     // 程序入口html文件
-|   |-- util               // 公共的js方法，vue的mixin混合
-|   |-- app.vue            // 页面入口文件
-|   |-- main.js            // 程序入口文件，加载各种公共组件
-|-- .babelrc               // ES6语法编译配置
-|-- gulpfile.js            // 启动，打包，部署，自动化构建
-|-- webpack.config.js      // 程序打包配置
-|-- server.js              // 代理服务器配置
-|-- README.md              // 项目说明
-|-- package.json           // 配置项目相关信息，通过执行 npm init 命令创建
+|-- config                           // 项目开发环境配置
+|   |-- index.js                     // 项目打包部署配置
+|-- src                              // 源码目录
+|   |-- components                   // 公共组件
+|       |-- header.vue               // 页面头部公共组件
+|       |-- index.js                 // 加载各种公共组件
+|   |-- config                       // 路由配置和程序的基本信息配置
+|       |-- routes.js                // 配置页面路由
+|   |-- css                          // 各种css文件
+|       |-- common.css               // 全局通用css文件
+|   |-- iconfont                     // 各种字体图标
+|   |-- images                       // 公共图片
+|   |-- less                         // 各种less文件
+|       |-- common.less              // 全局通用less文件
+|   |-- pages                        // 页面组件
+|       |-- home                     // 个人中心
+|       |-- index                    // 网站首页
+|       |-- login                    // 登录
+|       |-- signout                  // 退出
+|   |-- store                        // vuex的状态管理
+|       |-- index.js                 // 加载各种store模块
+|       |-- user.js                  // 用户store
+|   |-- template                     // 各种html文件
+|       |-- index.html               // 程序入口html文件
+|   |-- util                         // 公共的js方法，vue的mixin混合
+|   |-- app.vue                      // 页面入口文件
+|   |-- main.js                      // 程序入口文件，加载各种公共组件
+|-- .babelrc                         // ES6语法编译配置
+|-- gulpfile.js                      // 启动，打包，部署，自动化构建
+|-- webpack.config.js                // 程序打包配置
+|-- server.js                        // 代理服务器配置
+|-- README.md                        // 项目说明
+|-- package.json                     // 配置项目相关信息，通过执行 npm init 命令创建
 .
 </pre>
 
@@ -102,14 +103,43 @@ vue-router                            // 路由
 vuex                                  // 组件状态管理
 ```
 
-### 构建开发环境
-1.基本信息配置 // config/index.js
+### 6.构建开发环境代码阅读顺序
+config/index.js                       // 配置项目开发时的信息
+webpack.config.js                     // webpack打包配置
+.babelrc                              // ES6编译配置
+server.js                             // 设置代理服务器
+gulpfile.js                           // 自动化打包，编译，压缩，部署服务器
+package.json                          // 自定义命令，启动程序，自动部署
 
-### 6.页面规划
+### 7.页面规划
 ```
-/            // 首页，不需要登录可以访问
-/login       // 登录，不需要登录可以访问
-/signout     // 退出登录，需要登录后才可以访问
-/home        // 个人中心，需要登录后才可以访问
-*            // 强制跳转到登录页面
+/                                     // 首页，不需要登录可以访问
+/login                                // 登录，不需要登录可以访问
+/signout                              // 退出登录，需要登录后才可以访问
+/home                                 // 个人中心，需要登录后才可以访问
+*                                     // 强制跳转到登录页面
 ```
+
+### 8.测试编译
+src/template/index.html               // html入口文件
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>vue2-demo</title>
+</head>
+
+<body>
+</body>
+
+</html>
+```
+src/main.js                           // js入口文件
+```javascript
+alert('test')
+```
+1.运行程序执行命令：npm run dev
+2.然后打开网址：http://localhost:3000/admin/app/
+3.如果浏览器弹出test，说明我们的开发环境已经搭建通过。
