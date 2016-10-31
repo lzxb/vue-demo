@@ -89,6 +89,12 @@ vuex                                  // 组件状态管理
 *                                     // 强制跳转到登录页面
 ```
 
+### 
+``` 运行
+npm install
+npm run dev
+http://localhost:3000/app/
+```
 
 ## 开发教程
 
@@ -162,7 +168,7 @@ alert('test')
 ```
 ```
 1.运行程序执行命令：npm run dev
-2.然后打开网址：http://localhost:3000/admin/app/
+2.然后打开网址：http://localhost:3000/app/
 3.如果浏览器弹出test，说明我们的开发环境已经搭建通过。
 ```
 **package.json自定义命令说明**
