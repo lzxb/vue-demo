@@ -19,6 +19,7 @@ export default {
          * @param {Object} state
          */
         SIGNOUT(state) {
+            sessionStorage.removeItem('user')
             Object.keys(state).forEach(k => Vue.delete(state, k))
         }
     },
