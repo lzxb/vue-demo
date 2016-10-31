@@ -5,7 +5,7 @@ const config = require('./config/')
 
 var compiler = Webpack(webpackConfig)
 var server = new WebpackDevServer(compiler, {
-    publicPath: webpackConfig.output.publicPath,
+    publicPath: config.publicPath,
     stats: {
         colors: require('supports-color') //显示不同的颜色区分打包的文件
     },
