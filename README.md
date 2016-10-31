@@ -89,8 +89,8 @@ vuex                                  // 组件状态管理
 *                                     // 强制跳转到登录页面
 ```
 
-### 
-``` 运行
+### 运行程序 
+```
 npm install
 npm run dev
 http://localhost:3000/app/
