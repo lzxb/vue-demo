@@ -5,8 +5,9 @@ vue2正式版已经发布将近一个月了，
 还有一个项目下个月也会采用vue2进行重构
 选择它没什么理由，如果非要说一个理由
 那就是它的中文文档远比react，angularjs要友好
-github:[https://github.com/lzxb/vue2-demo](https://github.com/lzxb/vue2-demo)
 ```
+github:[https://github.com/lzxb/vue2-demo](https://github.com/lzxb/vue2-demo)
+
 ## 源码说明
 ### 项目目录说明
 ```
