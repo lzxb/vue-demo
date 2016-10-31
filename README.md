@@ -117,8 +117,10 @@ npm install -g gulp
 ```
  gulp是一个自动化构建工具,开发者可以使用它在项目开发过程中自动执行常见任务
 
-### 3.创建项目目录 test-demo 
-
+### 3.初始化package.json文件
+```
+npm init
+```
 
 ### 4.安装开发环境依赖模块 npm install --save-dev 模块名
 **webpack相关模块**
