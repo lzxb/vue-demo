@@ -45,7 +45,7 @@ webpack                               // 用来构建打包程序
 webpack-dev-server                    // 开发环境下，设置代理服务器
 html-webpack-plugin                   // html 文件编译
 url-loader                            // 图片  转化成base64格式
-file-loader                           // 字体 将字体文件打包
+file-loader                           // 字体  将字体文件打包
 css-loader                            // css  生成
 less                                  // css  预处理器less
 less-loader                           // css  预处理器less的webpack插件
