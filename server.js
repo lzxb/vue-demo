@@ -11,7 +11,8 @@ var server = new WebpackDevServer(compiler, {
     },
     proxy: { //代理服务器
         '*': {
-            target: config.target
+            target: config.target,
+            changeOrigin: true
         }
     }
 })

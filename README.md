@@ -49,7 +49,7 @@ github:[https://github.com/lzxb/vue2-demo](https://github.com/lzxb/vue2-demo)
 ```
 
 ### 开发环境依赖模块说明
-**webpack相关模块**
+#### webpack相关模块
 ```
 webpack                               // 用来构建打包程序
 webpack-dev-server                    // 开发环境下，设置代理服务器
@@ -72,18 +72,18 @@ babel-plugin-syntax-jsx               // vue  jsx语法编译
 babel-plugin-transform-vue-jsx        // vue  jsx语法编译
 ```
 
-**gulp相关模块**
+#### gulp相关模块
 ```
 gulp                                  // 用来构建自动化工作流
 gulp-sftp                             // 将代码自动部署到服务器上
 del                                   // 代码部署成功后，删除本地编译的代码
 ```
-**其他模块**
+#### 其他模块
 ```
 cross-env                             // 解决跨平台设置NODE_ENV的问题
 ```
 ### 生产模块依赖说明
-**vue全家桶**
+#### vue全家桶
 ```
 vue                                   // 构建用户界面的
 vue-router                            // 路由
@@ -110,24 +110,24 @@ http://localhost:3000/app/
 
 
 ### 1.安装开发环境
-**vs code** https://code.visualstudio.com 
+#### vs code https://code.visualstudio.com 
 ```
 开发时所用的编辑器，内置了终端，开发时使它执行命令运行程序
 ```
-**Node.js** https://nodejs.org 
+#### Node.js https://nodejs.org 
 ```
 JS服务器端的运行环境，内置npm包管理器，管理项目依赖的各种模块，编译代码，自动部署到服务器就全靠他了
 ```
 
 ### 2.安装全局模块
-**webpack** 
+#### webpack
 ```
 npm install -g webpack
 ```
 webpack是一款模块加载器兼打包工具，它能把各种资源，例如JS（含JSX）、coffee、样式（含less/sass）、图片等都作为模块来使用和处理
 
 
-**gulp**
+#### gulp
 ```
 npm install -g gulp
 ```
@@ -157,7 +157,7 @@ npm install --save vue vue-router vuex
 + [package.json](package.json)             执行npm init 初始化项目，自定义命令，启动程序，自动部署
 
 ### 6.测试编译
-**src/template/index.html**
+#### src/template/index.html
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -172,7 +172,7 @@ npm install --save vue vue-router vuex
 
 </html>
 ```
-**src/main.js**
+#### src/main.js
 ```javascript
 alert('test')
 ```
@@ -181,7 +181,7 @@ alert('test')
 2.然后打开网址：http://localhost:3000/app/
 3.如果浏览器弹出test，说明我们的开发环境已经搭建通过。
 ```
-**package.json自定义命令说明**
+#### package.json自定义命令说明
 ```
 npm run dev      开发环境
 npm run dev:test 将代码打包到测试服务器
