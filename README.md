@@ -123,12 +123,10 @@ npm init
 ```
 
 ### 4.安装开发环境依赖模块 npm install --save-dev 模块名
-**webpack相关模块**
 ``` 
 npm install --save-dev webpack webpack-dev-server html-webpack-plugin url-loader file-loader css-loader less less-loader style-loader autoprefixer-loader babel-core babel-loader babel-plugin-transform-object-assign babel-preset-es2015 babel-preset-stage-0 vue-loader babel-helper-vue-jsx-merge-props babel-plugin-syntax-jsx babel-plugin-transform-vue-jsx gulp gulp-sftp del cross-env
 ```
 ### 5.安装生产环境依赖模块 npm install --save 模块名
-**vue全家桶**
 ``` 
 npm install --save vue vue-router vuex
 ```
