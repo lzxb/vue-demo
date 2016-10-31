@@ -117,8 +117,9 @@ npm install -g gulp
 ```
  gulp是一个自动化构建工具,开发者可以使用它在项目开发过程中自动执行常见任务
 
-### 3.初始化package.json文件
+### 3.创建项目
 ```
+创建项目目录，并且在项目目录下执行命令，初始化package.json文件
 npm init
 ```
 
