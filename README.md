@@ -121,14 +121,12 @@ vuex                                  // 组件状态管理
 ```
 
 ### 5.搭建开发环境
-```
 [package.json](package.json)          // 执行npm init 初始化项目，自定义命令，启动程序，自动部署
 [config/index.js](config/index.js)                       // 配置项目开发时的信息
 [webpack.config.js](webpack.config.js)                   // webpack打包配置
 [.babelrc](.babelrc)                             // ES6编译配置
 [server.js](server.js)                             // 设置代理服务器
 [gulpfile.js](gulpfile.js)                           // 自动化打包，编译，压缩，部署服务器
-```
 
 ### 6.测试编译
 **src/template/index.html**
