@@ -1,6 +1,15 @@
+## 前言
+```
+vue2正式版已经发布将近一个月了，
+国庆过后就用在了公司的两个正式项目上，
+还有一个项目下个月也会采用vue2进行重构
+选择它没什么理由，如果非要说一个理由
+那就是它的中文文档远比react，angularjs要友好
+github:[https://github.com/lzxb/vue2-demo](https://github.com/lzxb/vue2-demo)
+```
 ## 源码说明
 ### 项目目录说明
-<pre>
+```
 .
 |-- config                           // 项目开发环境配置
 |   |-- index.js                     // 项目打包部署配置
@@ -36,7 +45,7 @@
 |-- README.md                        // 项目说明
 |-- package.json                     // 配置项目相关信息，通过执行 npm init 命令创建
 .
-</pre>
+```
 
 ### 开发环境依赖模块说明
 **webpack相关模块**
