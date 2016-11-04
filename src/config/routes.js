@@ -6,7 +6,7 @@ export default [
         component: App,
         children: [
             {
-                path: '/login', 
+                path: '/login',
                 meta: { auth: false },
                 component: resolve => require(['../pages/login/'], resolve)
             },
