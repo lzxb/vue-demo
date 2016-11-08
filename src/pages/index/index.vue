@@ -3,7 +3,9 @@
 		padding: 50px;
 		text-align: center;
 	}
-	
+	div{
+		display: flex;
+	}
 	.msg {
 		padding: 50px;
 		text-align: center;

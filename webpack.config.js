@@ -7,7 +7,7 @@ const IS_ENV = process.env.NODE_ENV == 'production'
 
 var plugins = []
 if (IS_ENV) { //生产环境
-    plugins.push(new webpack.DefinePlugin({ 
+    plugins.push(new webpack.DefinePlugin({
         'process.env': { //设置成生产环境
             NODE_ENV: 'production'
         }
@@ -48,24 +48,12 @@ module.exports = {
             {
                 test: /\.css/,
                 exclude: /^node_modules$/,
-                loader: 'style-loader!css-loader'
+                loader: `style-loader!css-loader!autoprefixer-loader?{ browsers: ['last 100 versions'] }!`
             },
             {
                 test: /\.less/,
                 exclude: /^node_modules$/,
-                loader: `style-loader!css-loader!autoprefixer-loader?{
-                    browsers: [
-                        'ie >= 8',
-                        'ie_mob >= 10',
-                        'ff >= 26',
-                        'chrome >= 30',
-                        'safari >= 6',
-                        'opera >= 23',
-                        'ios >= 5',
-                        'android >= 2.3',
-                        'bb >= 10'
-                    ]
-                }!less-loader`
+                loader: `style-loader!css-loader!autoprefixer-loader?{ browsers: ['last 100 versions'] }!less-loader`
             },
             {
                 test: /\.(png|jpg)$/,
@@ -86,4 +74,11 @@ module.exports = {
             vue: 'vue/dist/vue.js' //webpack打包时，需要设置别名
         }
     },
+    vue: {
+        postcss: [
+            require('autoprefixer')({
+                browsers: ['last 100 versions']
+            })
+        ]
+    }
 }
