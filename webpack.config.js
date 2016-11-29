@@ -71,7 +71,8 @@ module.exports = {
     resolve: {
         extensions: ['', '.js', '.vue', '.jsx'], //后缀名自动补全
         alias: {
-            vue: 'vue/dist/vue.js' //webpack打包时，需要设置别名
+            vue: 'vue/dist/vue.js', //webpack打包时，需要设置别名
+            store: path.resolve('src/store/'), //常用工具方法
         }
     },
     vue: {

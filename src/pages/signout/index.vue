@@ -19,11 +19,12 @@
 </template>
 <script>
     import { mapActions } from 'vuex'
+    import { SIGNOUT } from 'store/user'
     export default {
         methods: {
-            ...mapActions(['SIGNOUT']),
+            ...mapActions([SIGNOUT]),
             submit() {
-                this.SIGNOUT()
+                this.USER_SIGNOUT()
 				this.$router.replace({path: '/login'})
             }
         }
