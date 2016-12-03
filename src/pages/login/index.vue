@@ -18,9 +18,9 @@
 </style>
 <template>
 	<div>
-		<common-header title="登录">
+		<v-header title="登录">
 			<router-link slot="left" to="/">返回</router-link>
-		</common-header>
+		</v-header>
 		<form class="login" v-on:submit.prevent="submit">
 			<div class="line">	
 				<div v-show="btn && !form.id">id不能为空</div>

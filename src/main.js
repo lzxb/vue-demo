@@ -3,14 +3,14 @@ import VueRouter from 'vue-router'
 
 import routes from './config/routes'
 import store from './store/'
-import common from './component/' //加载公共组件
+import components from './components/' //加载公共组件
 
 import './css/common.css'
 import './less/common.less'
 
-Object.keys(common).forEach((key) => {
+Object.keys(components).forEach((key) => {
     var name = key.replace(/(\w)/, (v) => v.toUpperCase()) //首字母大写
-    Vue.component(`common${name}`, common[key])
+    Vue.component(`v${name}`, components[key])
 })
 
 Vue.use(VueRouter)

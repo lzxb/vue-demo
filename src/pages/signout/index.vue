@@ -9,9 +9,9 @@
 </style>
 <template>
 	<div>
-		<common-header title="退出">
+		<v-header title="退出">
 			<router-link slot="left" to="/home">返回</router-link>
-		</common-header>
+		</v-header>
 		<div class="btn">
 			<button v-on:click="submit">确认退出</button>
 		</div>

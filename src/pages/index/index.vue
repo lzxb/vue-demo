@@ -12,9 +12,9 @@
 </style>
 <template>
 	<div>
-		<common-header title="首页">
+		<v-header title="首页">
 			<router-link slot="right" v-if="user.id" to="/home">{{user.name}}</router-link>
-		</common-header>
+		</v-header>
 		<div class="login-msg" v-if="!user.id">
 			<router-link to="/login">你还未登录，请先登录</router-link>
 		</div>
