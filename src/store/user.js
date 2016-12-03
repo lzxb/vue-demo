@@ -1,26 +1,26 @@
 import Vue from 'vue'
 
-export const SIGNIN = 'USER_SIGNIN' //登录成功
-export const SIGNOUT = 'USER_SIGNOUT' //退出登录
+export const USER_SIGNIN = 'USER_SIGNIN' //登录成功
+export const USER_SIGNOUT = 'USER_SIGNOUT' //退出登录
 
 export default {
     state: JSON.parse(sessionStorage.getItem('user')) || {},
     mutations: {
-        [SIGNIN](state, user) {
+        [USER_SIGNIN](state, user) {
             sessionStorage.setItem('user', JSON.stringify(user))
             Object.assign(state, user)
         },
-        [SIGNOUT](state) {
+        [USER_SIGNOUT](state) {
             sessionStorage.removeItem('user')
             Object.keys(state).forEach(k => Vue.delete(state, k))
         }
     },
     actions: {
-        [SIGNIN]({commit}, user) {
-            commit(SIGNIN, user)
+        [USER_SIGNIN]({commit}, user) {
+            commit(USER_SIGNIN, user)
         },
-        [SIGNOUT]({commit}) {
-            commit(SIGNOUT)
+        [USER_SIGNOUT]({commit}) {
+            commit(USER_SIGNOUT)
         }
     }
 }

@@ -33,6 +33,6 @@
 				logo
 			}
 		},
-        computed: mapState({user: state => state.user}),
+        computed: mapState({ user: state => state.user }),
     }
 </script>

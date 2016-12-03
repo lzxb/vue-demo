@@ -36,7 +36,7 @@
 </template>
 <script>
     import { mapActions } from 'vuex'
-    import { SIGNIN } from 'store/user'
+    import { USER_SIGNIN } from 'store/user'
 
     export default {
         data() {
@@ -49,12 +49,12 @@
 			}
 		},
 		methods: {
-            ...mapActions([SIGNIN]),
+            ...mapActions([USER_SIGNIN]),
 			submit() {
 				this.btn = true
 				if(!this.form.id || !this.form.name) return
 				this.USER_SIGNIN(this.form)
-				this.$router.replace({path: '/home'})
+				this.$router.replace({ path: '/home' })
 			}
 		}
     }
