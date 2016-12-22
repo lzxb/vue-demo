@@ -13,6 +13,6 @@ module.exports = {
         pass: '88888888', //密码
         port: 22 //端口
     },
-    publicPath: '/app/', //程序在服务器的根路径地址
+    publicPath: '/app/', //程序在网站根路径地址
     target: 'https://cnodejs.org/' //连接的服务器地址
 }
