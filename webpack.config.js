@@ -9,7 +9,7 @@ var plugins = []
 if (IS_ENV) { //生产环境
     plugins.push(new webpack.DefinePlugin({
         'process.env': { //设置成生产环境
-            NODE_ENV: '"production"'
+            NODE_ENV: 'production'
         }
     }))
     plugins.push(new webpack.optimize.UglifyJsPlugin({ //压缩代码
