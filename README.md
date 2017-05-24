@@ -1,3 +1,5 @@
+**强烈推荐**：[vuet是一个跨页面、跨组件的状态管理插件](https://github.com/medevicex/vuet)
+
 ## 前言
 ```
 国庆在回家的路上，得知了vue2发布了正式版，
