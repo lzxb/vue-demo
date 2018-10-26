@@ -1,4 +1,6 @@
-**强烈推荐**：[vuet是一个跨页面、跨组件的状态管理插件](https://github.com/medevicex/vuet)
+
+## 此项目除了正常的bug修复，不再进行功能更新
+如果对状态管理感兴趣，可以看下 [Tms](https://github.com/FollowmeTech/tms)，文档更齐全
 
 ## 前言
 ```
