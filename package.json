@@ -19,6 +19,9 @@
   "dependencies": {
     "@fmfe/genesis-app": "^0.0.56",
     "@fmfe/genesis-core": "^0.0.56",
+    "axios": "^0.19.2",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
     "express": "^4.17.1",
     "vue-meta": "^2.3.3",
     "vue-property-decorator": "^8.4.2",

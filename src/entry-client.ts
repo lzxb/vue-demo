@@ -1,13 +1,15 @@
 import { ClientOptions } from '@fmfe/genesis-core';
 import { createClientApp } from '@fmfe/genesis-app';
 import Vue from 'vue';
-import { App, createStore, createRouter } from './entry-base';
+import { App, createStore, createRouter, createRequest } from './entry-base';
 
 /**
  * 客户端入口，需要导出一个方法，并且返回一个 Promise<Vue>
  */
 export default async (clientOptions: ClientOptions): Promise<Vue> => {
-    const store = createStore();
+    const request = createRequest();
+    const store = createStore(request);
+    const router = createRouter();
     /**
      * 把服务端下发的状态，还原到 store 中
      */
@@ -36,7 +38,11 @@ export default async (clientOptions: ClientOptions): Promise<Vue> => {
             /**
              * 注入路由，根据当前请求进行渲染 createServerApp 会自动执行 router.push(req.url);
              */
-            router: createRouter()
+            router,
+            /**
+             * 注入请求，然后在 base-vue.ts 中封装对象
+             */
+            request
         }
     })
 };
