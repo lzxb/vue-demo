@@ -1,4 +1,5 @@
 import express from 'express';
+import path from 'path';
 import { SSR, Renderer } from '@fmfe/genesis-core';
 
 /**
@@ -9,7 +10,11 @@ export const app = express();
 /**
  * 创建一个 SSR 实例
  */
-export const ssr = new SSR();
+export const ssr = new SSR({
+    build: {
+        template: path.resolve(__dirname, './index.html')
+    }
+});
 
 /**
  * 拿到渲染器后，启动应用程序

@@ -1,9 +1,6 @@
 <template>
     <div class="app">
-        <h2>你好世界！</h2>
-        <p v-if="show" @click="close" class="text">
-            {{ installed ? '在客户端应该安装成功，点击我关闭!' : '未安装' }}
-        </p>
+        <router-view />
     </div>
 </template>
 <script lang="ts">
@@ -29,12 +26,7 @@ export default Vue.extend({
 </script>
 <style lang="less" scoped>
 .app {
-    padding: 100px;
-    text-align: center;
-}
-.text {
-    color: #999;
-    font-size: 14px;
-    cursor: pointer;
+    max-width: 750px;
+    margin: 0 auto;
 }
 </style>

@@ -17,7 +17,12 @@
     "ts-node": "^8.10.1"
   },
   "dependencies": {
+    "@fmfe/genesis-app": "^0.0.56",
     "@fmfe/genesis-core": "^0.0.56",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "vue-meta": "^2.3.3",
+    "vue-property-decorator": "^8.4.2",
+    "vue-router": "^3.1.6",
+    "vuex": "^3.4.0"
   }
 }
