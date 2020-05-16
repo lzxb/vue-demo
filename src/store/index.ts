@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import {Request } from '../request/request';
+import { Request } from '../request/request';
 
 export interface BlogItem {
     author: string;
@@ -12,7 +12,7 @@ export interface BlogItem {
 export interface State {
     user: {
         name: string;
-    },
+    };
     blogList: BlogItem[];
 }
 
@@ -39,15 +39,15 @@ export const createStore = (request: Request) => {
             /**
              * 用户登录成功
              */
-            signin (state, name: string) {
+            signin(state, name: string) {
                 state.user.name = name;
             },
             /**
              * 获取微博列表数据
              */
-            getBlogList (state, list: BlogItem[]) {
+            getBlogList(state, list: BlogItem[]) {
                 state.blogList = list;
             }
-        } 
+        }
     });
-}
+};

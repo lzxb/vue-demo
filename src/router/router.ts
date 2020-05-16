@@ -8,13 +8,17 @@ export const createRouter = () => {
         mode: 'history',
         routes: [
             {
-            path: '/',
-                component: () => import(/* webpackChunkName: "home" */ '../views/home.vue')
+                path: '/',
+                component: () =>
+                    import(/* webpackChunkName: "home" */ '../views/home.vue')
             },
             {
-            path: '/signin',
-                component: () => import(/* webpackChunkName: "signin" */ '../views/signin.vue')
+                path: '/signin',
+                component: () =>
+                    import(
+                        /* webpackChunkName: "signin" */ '../views/signin.vue'
+                    )
             }
         ]
-    })
-}
+    });
+};

@@ -1,15 +1,13 @@
 <template>
     <header class="header">
-        <h2 class="title" v-if="title">{{title}}</h2>
+        <h2 v-if="title" class="title">{{ title }}</h2>
     </header>
 </template>
 <script lang="ts">
-import Vue from 'vue'
+import Vue from 'vue';
 import { Component, Prop } from 'vue-property-decorator';
 
-@Component<VHeader>({
-    
-})
+@Component<VHeader>({})
 export default class VHeader extends Vue {
     @Prop({
         type: String,
@@ -25,8 +23,8 @@ export default class VHeader extends Vue {
     border-bottom: 1px solid #ccc;
 }
 .title {
-    text-align: center;
-    font-size: 18px;
     margin: 0;
+    font-size: 18px;
+    text-align: center;
 }
 </style>

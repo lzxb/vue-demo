@@ -7,4 +7,4 @@ import { createRequest } from './request/request';
 
 Vue.use(Meta);
 
-export { App, createStore, createRouter, createRequest }
+export { App, createStore, createRouter, createRequest };

@@ -28,7 +28,7 @@ export default async (clientOptions: ClientOptions): Promise<Vue> => {
          */
         clientOptions,
         /**
-         * new Vue({ ...vueOptions }) 
+         * new Vue({ ...vueOptions })
          */
         vueOptions: {
             /**
@@ -44,5 +44,5 @@ export default async (clientOptions: ClientOptions): Promise<Vue> => {
              */
             request
         }
-    })
+    });
 };

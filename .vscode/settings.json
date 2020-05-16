@@ -1,0 +1,10 @@
+{
+    // 使用项目配置规则
+    "eslint.options": {
+        "configFile": "./.eslintrc.js"
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true,
+        "source.fixAll.stylelint": true
+    },
+}

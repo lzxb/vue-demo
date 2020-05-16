@@ -3,7 +3,6 @@ import { createServerApp } from '@fmfe/genesis-app';
 import Vue from 'vue';
 import { App, createStore, createRouter, createRequest } from './entry-base';
 
-
 /**
  * 服务端入口，需要导出一个方法，并且返回一个 Promise<Vue>
  */
@@ -24,7 +23,7 @@ export default async (renderContext: RenderContext): Promise<Vue> => {
          */
         renderContext,
         /**
-         * new Vue({ ...vueOptions }) 
+         * new Vue({ ...vueOptions })
          */
         vueOptions: {
             /**
@@ -54,6 +53,6 @@ export default async (renderContext: RenderContext): Promise<Vue> => {
         });
         // 将服务端状态，下发给客户端
         renderContext.data.state.vuexState = app.$store.state;
-    })
+    });
     return app;
 };

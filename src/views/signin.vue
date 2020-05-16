@@ -2,7 +2,8 @@
     <div>
         <VHeader title="登录" />
         <form @submit.prevent>
-        <input v-model="name" placeholder="请输入你的昵称" /> <button @click="submit">登录</button>
+            <input v-model="name" placeholder="请输入你的昵称" />
+            <button @click="submit">登录</button>
         </form>
     </div>
 </template>
@@ -15,15 +16,15 @@ import { BaseVue } from '../base-vue';
     components: {
         VHeader
     },
-    metaInfo () {
+    metaInfo() {
         return {
             title: '登录'
-        }
+        };
     }
 })
 export default class Signin extends BaseVue {
     public name = '';
-    public async submit () {
+    public async submit() {
         if (!this.name) {
             return alert('请输入昵称');
         }
