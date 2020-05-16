@@ -31,8 +31,8 @@ export class BaseVue extends Vue {
      */
     public async getBlogList () {
         const res = await this.request.get('/api/blog/list');
-        if (res.status === 200 && res.data.success) {
-            this.$store.commit('getBlogList', res.data.data.list);
+        if (res.success) {
+            this.$store.commit('getBlogList', res.data.list);
         }
     }
     /**
@@ -43,7 +43,7 @@ export class BaseVue extends Vue {
             author: this.state.user.name,
             content
         });
-        if (res.status === 200 && res.data.success) {
+        if (res.success) {
             this.getBlogList(); // 发表成功后，重新获取微博数据
             return true;
         }
@@ -55,8 +55,8 @@ export class BaseVue extends Vue {
      */
     public async getCurrentUser () {
         const res = await this.request.get('/api/current-user');
-        if (res.status === 200 && res.data.success) {
-            return this.signin(res.data.data.name);
+        if (res.success) {
+            return this.signin(res.data.name);
         }
     }
 }

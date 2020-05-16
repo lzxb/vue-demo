@@ -1,5 +1,11 @@
 import { RenderContext } from '@fmfe/genesis-core';
-import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
+import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
+
+export interface RequestResponse {
+    success: boolean;
+    message: string;
+    data: any;
+}
 
 /**
  * 封装一层 axios
@@ -48,28 +54,44 @@ export class Request {
         })
     }
     /**
+     * 处理请求成功
+     */
+    private success<T>(res: AxiosResponse): Promise<RequestResponse> {
+        return res.data;
+    }
+    /**
+     * 处理请求失败
+     */
+    private async error(): Promise<RequestResponse> {
+        return {
+            success: false,
+            message: '请求失败',
+            data: null
+        }
+    }
+    /**
      * 获取数据
      */
-    public get(url: string, config: AxiosRequestConfig = {}) {
-        return this.axios.get(url, config);
+    public get(url: string, config: AxiosRequestConfig = {}): Promise<RequestResponse> {
+        return this.axios.get(url, config).then(this.success).catch(this.error);
     }
     /**
      * 提交数据
      */
     public post(url: string, data: any = {}, config: AxiosRequestConfig = {}) {
-        return this.axios.post(url, data, config)
+        return this.axios.post(url, data, config).then(this.success).catch(this.error);
     }
     /**
      * 更新数据
      */
     public put(url: string, data: any = {}, config: AxiosRequestConfig = {}) {
-        return this.axios.put(url, data, config)
+        return this.axios.put(url, data, config).then(this.success).catch(this.error);
     }
     /**
      * 删除数据
      */
     public delete(url: string, config: AxiosRequestConfig = {}) {
-        return this.axios.delete(url, config)
+        return this.axios.delete(url, config).then(this.success).catch(this.error);
     }
 }
 

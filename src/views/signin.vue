@@ -28,7 +28,7 @@ export default class Signin extends BaseVue {
             return alert('请输入昵称');
         }
         const res = await this.request.post('/api/signin', { name: this.name });
-        if (res.status === 200 && res.data.success && res.data.data.ok) {
+        if (res.success) {
             this.signin(this.name);
             this.$router.back();
             return;

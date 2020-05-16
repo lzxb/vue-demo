@@ -9,7 +9,7 @@
       <button @click="post">发表</button> <button @click="signout">退出登录</button>
     </div>
     <ul>
-      <li v-for="item in blogList" :key="item.id">{{item.author}} 发表了 {{item.content}}</li>
+      <li v-for="item in blogList" :key="item.id"> {{formatDate(item.createTime)}} {{item.author}} 发表了 {{item.content}}</li>
     </ul>
   </div>
 </template>
@@ -17,6 +17,7 @@
 import { Component } from "vue-property-decorator";
 import VHeader from "../components/v-header.vue";
 import { BaseVue } from "../base-vue";
+import { formatDate } from '../utils/utils';
 
 @Component<Home>({
   components: {
@@ -31,6 +32,7 @@ import { BaseVue } from "../base-vue";
 })
 export default class Home extends BaseVue {
   public blog = "";
+  public formatDate = formatDate;
   public get isLogin() {
     return !!this.state.user.name;
   }
@@ -48,7 +50,7 @@ export default class Home extends BaseVue {
   }
   public async signout() {
     const res = await this.request.post('/api/signout');
-    if (res.status === 200 && res.data.success && res.data.data.ok) {
+    if (res.success) {
       super.signout();
       return;
     } 
