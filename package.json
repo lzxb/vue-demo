@@ -5,8 +5,9 @@
     "main": "index.js",
     "scripts": {
         "dev": "ts-node genesis.dev -p=tsconfig.json",
-        "build": "rm -rf dist && NODE_ENV=production ts-node genesis.build -p=tsconfig.json",
-        "start": "NODE_ENV=production ts-node genesis.prod -p=tsconfig.json",
+        "build": "./build.sh",
+        "build:ts": "NODE_ENV=production tsc --build ./node.tsconfig.json",
+        "start": "NODE_ENV=production node dist/node/genesis.prod.js",
         "lint": "npm run lint:js && npm run lint:css",
         "lint:js": "eslint . --ext .js,.ts,.vue --fix",
         "lint:css": "stylelint . --syntax less --fix --ignore-path ./.stylelintignore | stylelint . --custom-syntax postcss-html --fix"

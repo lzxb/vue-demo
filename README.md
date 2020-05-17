@@ -1,6 +1,20 @@
 ## 前言
 这个项目最开始建立的是2016年的时候，如今已经过去了4年多，时光匆匆，如今 TS 已经流行起来，并且自己已经在 SSR 方面实践颇多，所以就花了半天的时间使用 [Genesis](https://github.com/fmfe/genesis) 写了一个完整的 Vue SSR 的demo。
 
+## 快速开发
+```bash
+# 开发环境启动
+npm run dev
+# 打包生产环境代码
+npm run build
+# 生产环境运行
+npm run start
+```
+
+## docker
+只需要执行 `yarn build` 命令后，将 `dist`、`node_modules`、目录和 `package.json` 文件 复制到镜像内即可，然后执行 `yarn start` 命令启动程序即可
+
+
 ## 技术栈
 - Vue 
 - Genesis 
@@ -18,6 +32,7 @@
 - 完整的展示了开发 Vue SSR 项目所需要注意的知识点
 - 基于 Genesis 开发的完整功能的 demo
 - 演示了如何在服务端预取数据，在客户端还原服务端状态
+- 演示了如何编译 SSR 和 TS 生产环境的代码
 
 ## 目录说明
 ```bash
@@ -49,6 +64,7 @@
 ├── .eslintrc.js          eslint 的配置
 ├── .gitignore            git 的忽略文件
 ├── .stylelintignore      stylelint 的忽略文件
+├── build.sh              编译生产环境代码到 dist 目录，yarn start 执行
 ├── genesis.build.ts      Genesis 构建生产环境代码
 ├── genesis.dev.ts        dev 环境开发入口
 ├── genesis.prod.ts       生产环境开发入口
