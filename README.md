@@ -78,4 +78,4 @@ npm run start
 ```
 
 ## Genesis
-Genesis 是一个 Vue 的 SSR 库，它提供了 SSR 最基础的能力，在它的基础上，你可以实现微前端、微服务的架构，如果你想深入的了解他，请查看它的[官方文档](https://fmfe.github.io/genesis-docs/#%E5%B8%B8%E7%94%A8%E9%93%BE%E6%8E%A5)
+Genesis 是一个 Vue 的 SSR 库，它提供了 SSR 最基础的能力，在它的基础上，你可以实现微前端、微服务的架构，如果你想深入的了解它，请查看它的[官方文档](https://fmfe.github.io/genesis-docs/#%E5%B8%B8%E7%94%A8%E9%93%BE%E6%8E%A5)
