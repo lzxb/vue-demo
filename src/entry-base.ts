@@ -2,8 +2,8 @@ import Vue from 'vue';
 import Meta from 'vue-meta';
 import App from './app.vue';
 import { createStore } from './store';
-import { createRouter } from './router/router';
-import { createRequest } from './request/request';
+import { createRouter } from './router';
+import { createRequest } from './request';
 
 Vue.use(Meta);
 

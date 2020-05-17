@@ -102,7 +102,8 @@ export class Request {
     /**
      * 处理请求失败
      */
-    private async error(): Promise<RequestResponse> {
+    private async error(err: Error): Promise<RequestResponse> {
+        console.log('request error', err?.message);
         return {
             success: false,
             message: '请求失败',

@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import { Request } from '../request/request';
+import { Request } from '../request';
 
 export interface BlogItem {
     author: string;

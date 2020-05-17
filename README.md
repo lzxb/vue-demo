@@ -1,119 +1,65 @@
-
-## 此项目除了正常的bug修复，不再进行功能更新
-如果对状态管理感兴趣，可以看下 [Tms](https://github.com/FollowmeTech/tms)，文档更齐全
-
 ## 前言
-```
-国庆在回家的路上，得知了vue2发布了正式版，
-国庆回来后，在公司内两个项目便直接应用上了vue2，
-一个是PC端的商户后台，一个是微信端商城，
-都是基于Vue2、vue-router、vuex ......
-在开发的过程中，遇到了一系列的问题，
-比如页面后退数据还原，滚动条还原，
-登录超时，获取列表数据，表单提交，
-多台服务器自动化部署，最终后一个个解决了，
-能够平稳的从react切换到vue2开发，vue的文档功不可没。
-```
-github:[https://github.com/lzxb/vue2-demo](https://github.com/lzxb/vue2-demo)
+这个项目最开始建立的是2016年的时候，如今已经过去了4年多，时光匆匆，如今 TS 已经流行起来，并且自己已经在 SSR 方面实践颇多，所以就花了半天的时间使用 [Genesis](https://github.com/fmfe/genesis) 写了一个完整的 Vue SSR 的demo。
 
-## 源码说明
-### 项目目录说明
-```
+## 技术栈
+- Vue 
+- Genesis 
+- vue-router
+- vuex
+- axios
+- vue-meta
+- TS
+
+## 功能点
+- 实现登录、退出、微博列表
+- 使用 vue-meta 管理页面 SEO 的信息
+- 使用 TS 封装了 axios 的请求类，涉及到服务端请求的 header 转发
+- 编写了 Vue 的基类，使得 Vue、Vuex 和 TS 的配合更好
+- 完整的展示了开发 Vue SSR 项目所需要注意的知识点
+- 基于 Genesis 开发的完整功能的 demo
+- 演示了如何在服务端预取数据，在客户端还原服务端状态
+
+## 目录说明
+```bash
 .
-|-- config                           // 项目开发环境配置
-|   |-- index.js                     // 项目打包部署配置
-|-- src                              // 源码目录
-|   |-- components                   // 公共组件
-|       |-- header.vue               // 页面头部公共组件
-|       |-- index.js                 // 加载各种公共组件
-|   |-- config                       // 路由配置和程序的基本信息配置
-|       |-- routes.js                // 配置页面路由
-|   |-- css                          // 各种css文件
-|       |-- common.css               // 全局通用css文件
-|   |-- iconfont                     // 各种字体图标
-|   |-- images                       // 公共图片
-|   |-- less                         // 各种less文件
-|       |-- common.less              // 全局通用less文件
-|   |-- pages                        // 页面组件
-|       |-- home                     // 个人中心
-|       |-- index                    // 网站首页
-|       |-- login                    // 登录
-|       |-- signout                  // 退出
-|   |-- store                        // vuex的状态管理
-|       |-- index.js                 // 加载各种store模块
-|       |-- user.js                  // 用户store
-|   |-- template                     // 各种html文件
-|       |-- index.html               // 程序入口html文件
-|   |-- util                         // 公共的js方法，vue的mixin混合
-|   |-- app.vue                      // 页面入口文件
-|   |-- main.js                      // 程序入口文件，加载各种公共组件
-|-- .babelrc                         // ES6语法编译配置
-|-- gulpfile.js                      // 启动，打包，部署，自动化构建
-|-- webpack.config.js                // 程序打包配置
-|-- server.js                        // 代理服务器配置
-|-- README.md                        // 项目说明
-|-- package.json                     // 配置项目相关信息，通过执行 npm init 命令创建
-.
+├── dist                  yarn build 编译后的源码目录
+├── mock                  模拟接口
+│   └── mock.ts           实现登录、退出、微博列表的 mock api
+├── src                   源码目录
+│   ├── components        公共组件
+│   |   └── v-header.vue  封装一个头部的组件
+|   ├── request           请求处理目录
+|   |   └── index.ts      封装 axios 请求类的实现
+|   ├── router            路由管理目录
+|   |   └── index.ts      提供创建路由的方法
+|   ├── store             状态管理目录
+|   |   └── index.ts      程序全局状态的实现
+|   ├── utils             封装工具函数目录
+|   |   └── index.ts      工具函数的封装
+|   ├── views             页面目录
+|   |   ├── home.vue      网站首页
+|   |   └── signin.vue    登录页面
+|   ├── app.vue           应用的公共组件
+|   ├── base-vue.ts       对 Vue 封装一封，包装 vuex、request
+|   ├── entry-client.ts   客户端入口文件
+|   ├── entry-server.ts   服务端入口文件
+|   └── shims-vue.d.ts    Vue 文件的 TS 声明
+├── .editorconfig         编辑器配置
+├── .eslintignore         eslint 的忽略配置
+├── .eslintrc.js          eslint 的配置
+├── .gitignore            git 的忽略文件
+├── .stylelintignore      stylelint 的忽略文件
+├── genesis.build.ts      Genesis 构建生产环境代码
+├── genesis.dev.ts        dev 环境开发入口
+├── genesis.prod.ts       生产环境开发入口
+├── genesis.ts            dev 和 生产环境，通用逻辑封装
+├── index.html            SSR 渲染的基本 html 模板
+├── package.json          包管理配置
+├── README.md             项目说明文档
+├── stylelint.config.js   stylelint 的配置文件
+├── tsconfig.json         TS 的配置文件
+└── yarn.lock             yarn 的依赖版本锁
 ```
 
-### 开发环境依赖模块说明
-#### webpack相关模块
-```
-webpack                               // 用来构建打包程序
-webpack-dev-server                    // 开发环境下，设置代理服务器
-html-webpack-plugin                   // html 文件编译
-url-loader                            // 图片  转化成base64格式
-file-loader                           // 字体  将字体文件打包
-css-loader                            // css  生成
-less                                  // css  预处理器less
-less-loader                           // css  预处理器less的webpack插件
-style-loader                          // css  插入到style标签
-autoprefixer-loader                   // css  浏览器兼容性问题处理
-babel-core                            // ES6  代码转换器
-babel-loader                          // ES6  代码转换器，webpack插件
-babel-plugin-transform-object-assign  // ES6  Object.assign方法做兼容处理
-babel-preset-es2015                   // ES6  代码编译成现在浏览器支持的ES5
-babel-preset-stage-0                  // ES6  ES7要使用的语法阶段
-vue-loader                            // vue  组件编译
-babel-helper-vue-jsx-merge-props      // vue  jsx语法编译
-babel-plugin-syntax-jsx               // vue  jsx语法编译
-babel-plugin-transform-vue-jsx        // vue  jsx语法编译
-```
-
-#### gulp相关模块
-```
-gulp                                  // 用来构建自动化工作流
-gulp-sftp                             // 将代码自动部署到服务器上
-del                                   // 代码部署成功后，删除本地编译的代码
-```
-#### 其他模块
-```
-cross-env                             // 解决跨平台设置NODE_ENV的问题
-```
-### 生产模块依赖说明
-#### vue全家桶
-```
-vue                                   // 构建用户界面的
-vue-router                            // 路由
-vuex                                  // 组件状态管理
-```
-
-### 页面说明
-```
-/login                                // 登录，不需要登录可以访问
-/signout                              // 退出登录，需要登录后才可以访问
-/home                                 // 个人中心，需要登录后才可以访问
-/                                     // 首页，不需要登录可以访问
-*                                     // 强制跳转到登录页面
-```
-
-### 运行程序 
-```
-npm install
-npm run dev
-http://localhost:3000/app/
-```
-
-## 开发教程
-[1.开发环境搭建](https://github.com/lzxb/vue2-demo/blob/master/docs/1.md)  
-[2.实现登录退出](https://github.com/lzxb/vue2-demo/blob/master/docs/2.md)
+## Genesis
+Genesis 是一个 Vue 的 SSR 库，它提供了 SSR 最基础的能力，在它的基础上，你可以实现微前端、微服务的架构，如果你想深入的了解他，请查看它的[官方文档](https://fmfe.github.io/genesis-docs/#%E5%B8%B8%E7%94%A8%E9%93%BE%E6%8E%A5)

@@ -21,7 +21,7 @@
 import { Component } from 'vue-property-decorator';
 import VHeader from '../components/v-header.vue';
 import { BaseVue } from '../base-vue';
-import { formatDate } from '../utils/utils';
+import { formatDate } from '../utils/index';
 
 @Component<Home>({
     components: {
