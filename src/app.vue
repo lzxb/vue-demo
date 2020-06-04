@@ -8,6 +8,15 @@ import Vue from 'vue';
 
 export default Vue.extend({
     name: 'app',
+    metaInfo() {
+        return {
+            meta: [
+                {
+                    charset: 'utf-8'
+                }
+            ]
+        };
+    },
     data() {
         return {
             installed: false,

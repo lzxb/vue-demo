@@ -45,11 +45,33 @@ export default async (renderContext: RenderContext): Promise<Vue> => {
      */
     renderContext.beforeRender(() => {
         // 如果你需要设置网站的关键词、描述等等，请查阅相关文档：https://vue-meta.nuxtjs.org/
-        const { title } = app.$meta().inject();
-        // 在 index.html 文件中使用 <%- title %>  就可以渲染出标题了
-        Object.defineProperty(renderContext.data, 'title', {
-            enumerable: false, // 因为标题不需要下发到客户端，所以设置为不可枚举
-            value: title?.text() || ''
+        const {
+            title,
+            meta,
+            link,
+            style,
+            script,
+            htmlAttrs,
+            headAttrs,
+            bodyAttrs,
+            base,
+            noscript
+        } = app.$meta().inject();
+        // 在 index.html 文件中使用 <%- meta.title %>  就可以渲染出标题了，其它的举一反三
+        Object.defineProperty(renderContext.data, 'meta', {
+            enumerable: false,
+            value: {
+                title: title?.text() || '',
+                meta: meta?.text() || '',
+                link: link?.text() || '',
+                style: style?.text() || '',
+                script: script?.text() || '',
+                htmlAttrs: htmlAttrs?.text() || '',
+                headAttrs: headAttrs?.text() || '',
+                bodyAttrs: bodyAttrs?.text() || '',
+                base: base?.text() || '',
+                noscript: noscript?.text() || ''
+            }
         });
         // 将服务端状态，下发给客户端
         renderContext.data.state.vuexState = app.$store.state;

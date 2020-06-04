@@ -1,12 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <%- title %>
-    <%- style %>
+<html <%-meta.htmlAttrs%>>
+
+<head <%-meta.bodyAttrs%>>
+    <%-meta.meta%>
+    <%-meta.title%>
+    <%-meta.link%>
+    <%-meta.style%>
+    <%-style%>
 </head>
-<body>
-    <%- html %><%- script %><%- scriptState %>
+
+<body <%-meta.headAttrs%>>
+<%-html%>
+<%-meta.noscript%>
+<%-scriptState%>
+<%-meta.script%>
+<%-script%>
 </body>
+
 </html>
