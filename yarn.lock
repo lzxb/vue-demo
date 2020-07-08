@@ -859,15 +859,15 @@
   resolved "https://registry.npm.taobao.org/@csstools/convert-colors/download/@csstools/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha1-rUldxBsS511YjG24uYNPCPoTHrc=
 
-"@fmfe/genesis-app@0.0.60":
-  version "0.0.60"
-  resolved "https://registry.npm.taobao.org/@fmfe/genesis-app/download/@fmfe/genesis-app-0.0.60.tgz#68aab7d0d8d63451f3c28581e1b24b7718f7f1e6"
-  integrity sha1-aKq30NjWNFHzwoWB4bJLdxj38eY=
+"@fmfe/genesis-app@0.0.63":
+  version "0.0.63"
+  resolved "http://npm.followme.com/@fmfe%2fgenesis-app/-/genesis-app-0.0.63.tgz#d872c1a9b31343b3878250eb756218051d28a251"
+  integrity sha1-2HLBqbMTQ7OHglDrdWIYBR0oolE=
 
-"@fmfe/genesis-compiler@0.0.60":
-  version "0.0.60"
-  resolved "https://registry.npm.taobao.org/@fmfe/genesis-compiler/download/@fmfe/genesis-compiler-0.0.60.tgz#3bea6e5372d978b09369d23a3139d99e7025e2dd"
-  integrity sha1-O+puU3LZeLCTadI6MTnZnnAl4t0=
+"@fmfe/genesis-compiler@0.0.63":
+  version "0.0.63"
+  resolved "http://npm.followme.com/@fmfe%2fgenesis-compiler/-/genesis-compiler-0.0.63.tgz#4369a56eb3b3aea322d0c6835a0e8621a114290f"
+  integrity sha1-Q2mlbrOzrqMi0MaDWg6GIaEUKQ8=
   dependencies:
     "@babel/core" "^7.8.4"
     "@babel/plugin-proposal-class-properties" "^7.8.3"
@@ -907,20 +907,20 @@
     webpackbar "^4.0.0"
     write "^2.0.0"
 
-"@fmfe/genesis-core@0.0.60":
-  version "0.0.60"
-  resolved "https://registry.npm.taobao.org/@fmfe/genesis-core/download/@fmfe/genesis-core-0.0.60.tgz#49a675e0dfcc6f403f6ec5724e19704dfdb96e22"
-  integrity sha1-SaZ14N/Mb0A/bsVyThlwTf25biI=
+"@fmfe/genesis-core@0.0.63":
+  version "0.0.63"
+  resolved "http://npm.followme.com/@fmfe%2fgenesis-core/-/genesis-core-0.0.63.tgz#f65077c6415dcb274830b9f2cb8631f9b56dbfae"
+  integrity sha1-9lB3xkFdyydIMLnyy4Yx+bVtv64=
   dependencies:
     ejs "^3.0.1"
     serialize-javascript "^3.0.0"
     vue "^2.6.11"
     vue-server-renderer "^2.6.11"
 
-"@fmfe/genesis-lint@0.0.60":
-  version "0.0.60"
-  resolved "https://registry.npm.taobao.org/@fmfe/genesis-lint/download/@fmfe/genesis-lint-0.0.60.tgz#278987e1afa89820ad9b2ae3015e209688800c3e"
-  integrity sha1-J4mH4a+omCCtmyrjAV4gloiADD4=
+"@fmfe/genesis-lint@0.0.63":
+  version "0.0.63"
+  resolved "http://npm.followme.com/@fmfe%2fgenesis-lint/-/genesis-lint-0.0.63.tgz#efabd07eebc3c7cb8e7811ee67c867f448050cca"
+  integrity sha1-76vQfuvDx8uOeBHuZ8hn9EgFDMo=
   dependencies:
     "@typescript-eslint/eslint-plugin" "^2.20.0"
     "@typescript-eslint/parser" "^2.20.0"
