@@ -9,21 +9,21 @@
         "build:ts": "NODE_ENV=production tsc --build ./node.tsconfig.json",
         "start": "NODE_ENV=production node dist/node/genesis.prod.js",
         "lint": "npm run lint:js && npm run lint:css",
-        "lint:js": "eslint . --ext .js,.ts,.vue --fix",
-        "lint:css": "stylelint . --syntax less --fix --ignore-path ./.stylelintignore | stylelint . --custom-syntax postcss-html --fix"
+        "lint:js": "fm-eslint . --ext .js,.ts,.vue --fix",
+        "lint:css": "fm-stylelint . --syntax less --fix --ignore-path ./.stylelintignore | fm-stylelint . --custom-syntax postcss-html --fix"
     },
     "author": "",
     "license": "MIT",
     "devDependencies": {
-        "@fmfe/genesis-compiler": "0.0.70",
-        "@fmfe/genesis-lint": "0.0.70",
+        "@fmfe/genesis-compiler": "0.0.80",
+        "@fmfe/genesis-lint": "0.0.80",
         "@types/express": "^4.17.6",
         "@types/node": "^14.0.1",
         "ts-node": "^8.10.1"
     },
     "dependencies": {
-        "@fmfe/genesis-app": "0.0.70",
-        "@fmfe/genesis-core": "0.0.70",
+        "@fmfe/genesis-app": "0.0.80",
+        "@fmfe/genesis-core": "0.0.80",
         "axios": "^0.19.2",
         "body-parser": "^1.19.0",
         "cookie-parser": "^1.4.5",
@@ -40,16 +40,16 @@
     },
     "lint-staged": {
         "*.{ts,js}": [
-            "eslint --ext .js,.ts --fix",
+            "fm-eslint --ext .js,.ts --fix",
             "git add"
         ],
         "*.{css,less}": [
-            "stylelint --syntax less --fix",
+            "fm-stylelint --syntax less --fix",
             "git add"
         ],
         "*.{vue}": [
-            "eslint --ext .js,.ts --fix",
-            "stylelint --custom-syntax postcss-html --fix",
+            "fm-eslint --ext .js,.ts --fix",
+            "fm-stylelint --custom-syntax postcss-html --fix",
             "git add"
         ]
     }
