@@ -14,7 +14,7 @@ export const app = express();
 export const ssr = new SSR({
     build: {
         template: path.resolve(__dirname, './index.html'),
-        transpile: [path.resolve('./node_modules/@fmfe/genesis-app/src')]
+        transpile: [path.resolve('./node_modules/@fmfe/genesis-app')]
     }
 });
 
