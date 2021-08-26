@@ -6,7 +6,7 @@
         </p>
         <div v-else>
             <input v-model="blog" />
-            <button @click="post">发表</button>
+            <button @click="post">发表微博</button>
             <button @click="signout">退出登录</button>
         </div>
         <ul>
