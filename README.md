@@ -18,22 +18,11 @@ npm run start
   - 升级[Genesis2.0](https://github.com/fmfe/genesis)版本
   - 能支持全文件类型检查，并且生成类型文件
   - 如果对 SSR 微服务架构感兴趣，[点击这里来看看](https://github.com/fmfe/genesis/blob/master/docs/zh-CN/why.md)
+  - 新增了Docker打包的脚本，并且可以在本地运行Docker镜像
 
 ## Docker
-编写构建脚本
-```bash
-# 删除构建产物
-rm -rf node_modules dist types
-# 安装全部的依赖
-yarn install
-# 执行构建程序
-yarn build
-# 删除开发依赖，再安装生产依赖，可以使镜像最小化
-rm -rf node_modules
-yarn --prod
-```
-编写`Dockerfile`文件时，只需要把`dist`、`node_modules`目录和`package.json`复制到镜像中即可，启动的时候执行`yarn start`命令
 
+执行`./docker-build.sh`命令构建镜像，举一反三，具体编写逻辑请查看`./docker-build.sh`和`Dockerfile`文件
 
 ## 技术栈
 - Vue 

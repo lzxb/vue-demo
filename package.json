@@ -26,7 +26,8 @@
         "vue-router": "^3.5.3",
         "@fmfe/genesis-app": "2.0.9",
         "axios": "^0.26.0",
-        "vuex": "^3.6.2"
+        "vuex": "^3.6.2",
+        "@types/cookie-parser": "1.4.2"
     },
     "dependencies": {
         "@fmfe/genesis-core": "2.0.9",
