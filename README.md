@@ -20,6 +20,7 @@ npm run start
   - 如果对 SSR 微服务架构感兴趣，[点击这里来看看](https://github.com/fmfe/genesis/blob/master/docs/zh-CN/why.md)
 
 ## Docker
+编写构建脚本
 ```bash
 # 删除构建产物
 rm -rf node_modules dist types
