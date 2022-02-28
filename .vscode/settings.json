@@ -1,10 +1,11 @@
 {
-    // 使用项目配置规则
-    "eslint.options": {
-        "configFile": "./.eslintrc.js"
-    },
+    "stylelint.validate": [
+        "css",
+        "less",
+        "html",
+        "vue"
+    ],
     "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true,
-        "source.fixAll.stylelint": true
-    },
+        "source.fixAll": true
+    }
 }

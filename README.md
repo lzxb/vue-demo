@@ -1,5 +1,5 @@
 ## 前言
-这个项目最开始建立的是2016年的时候，如今已经过去了4年多，时光匆匆，如今 TS 已经流行起来，并且自己已经在 SSR 方面实践颇多，所以就花了半天的时间使用 [Genesis](https://github.com/fmfe/genesis) 写了一个完整的 Vue SSR 的demo。
+这个项目最开始建立的是2016年的时候，如今已经过去了6年多，时光匆匆，如今 TS 已经流行起来，并且自己已经在 SSR 方面实践颇多，所以就花了半天的时间使用 [Genesis](https://github.com/fmfe/genesis) 写了一个完整的 Vue SSR 的demo。
 
 ## 快速开发
 ```bash
@@ -7,12 +7,31 @@
 npm run dev
 # 打包生产环境代码
 npm run build
+# 执行TS类型检查
+npm run type-check
 # 生产环境运行
 npm run start
 ```
 
-## docker
-只需要执行 `yarn build` 命令后，将 `dist`、`node_modules`、目录和 `package.json` 文件 复制到镜像内即可，然后执行 `yarn start` 命令启动程序即可
+## 更新日志
+- 2022-02
+  - 升级[Genesis2.0](https://github.com/fmfe/genesis)版本
+  - 能支持全文件类型检查，并且生成类型文件
+  - 如果对 SSR 微服务架构感兴趣，[点击这里来看看](https://github.com/fmfe/genesis/blob/master/docs/zh-CN/why.md)
+
+## Docker
+```bash
+# 删除构建产物
+rm -rf node_modules dist types
+# 安装全部的依赖
+yarn install
+# 执行构建程序
+yarn build
+# 删除开发依赖，再安装生产依赖，可以使镜像最小化
+rm -rf node_modules
+yarn --prod
+```
+编写`Dockerfile`文件时，只需要把`dist`、`node_modules`目录和`package.json`复制到镜像中即可，启动的时候执行`yarn start`命令
 
 
 ## 技术栈
@@ -55,6 +74,7 @@ npm run start
 |   |   ├── home.vue      网站首页
 |   |   └── signin.vue    登录页面
 |   ├── app.vue           应用的公共组件
+├── ├── index.html        SSR 渲染的基本 html 模板
 |   ├── base-vue.ts       对 Vue 封装一封，包装 vuex、request
 |   ├── entry-client.ts   客户端入口文件
 |   ├── entry-server.ts   服务端入口文件
@@ -69,11 +89,11 @@ npm run start
 ├── genesis.dev.ts        dev 环境开发入口
 ├── genesis.prod.ts       生产环境开发入口
 ├── genesis.ts            dev 和 生产环境，通用逻辑封装
-├── index.html            SSR 渲染的基本 html 模板
 ├── package.json          包管理配置
 ├── README.md             项目说明文档
 ├── stylelint.config.js   stylelint 的配置文件
 ├── tsconfig.json         TS 的配置文件
+├── tsconfig.node.json    Node 运行程序使用 TS 的配置文件
 └── yarn.lock             yarn 的依赖版本锁
 ```
 

@@ -1,5 +1,7 @@
-import { Router } from '@fmfe/genesis-app';
+import Vue from 'vue';
+import Router from 'vue-router';
 
+Vue.use(Router);
 /**
  * 提供一个工厂函数，创建一个路由对象
  */

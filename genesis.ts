@@ -1,6 +1,7 @@
+import { Renderer, SSR } from '@fmfe/genesis-core';
 import express from 'express';
 import path from 'path';
-import { SSR, Renderer } from '@fmfe/genesis-core';
+
 import { initMock } from './mock/mock';
 
 /**
@@ -13,7 +14,6 @@ export const app = express();
  */
 export const ssr = new SSR({
     build: {
-        template: path.resolve(__dirname, './index.html'),
         transpile: [path.resolve('./node_modules/@fmfe/genesis-app')]
     }
 });

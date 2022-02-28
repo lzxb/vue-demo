@@ -1,5 +1,6 @@
 import { RenderContext } from '@fmfe/genesis-core';
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
+import Vue from 'vue';
 
 export interface RequestResponse {
     success: boolean;
@@ -29,20 +30,20 @@ export class Request {
             'lang',
             'origin'
         ];
-        const headers: { [x: string]: string | string[] } = {};
+        const headers: { [x: string]: string } = {};
         /**
          * 在服务器端是，将渲染上下文传递进来
          */
         if (renderContext?.req) {
             headersArr.forEach((k) => {
                 const v = renderContext?.req?.headers[k];
-                if (v) {
+                if (typeof v === 'string') {
                     headers[k] = v;
                 }
             });
         }
         this.axios = axios.create({
-            headers: headers,
+            headers,
             // 在服务器端请求的时候，需要设置请求的基本地址
             baseURL: 'http://localhost:3000',
             timeout: 5000,
@@ -61,10 +62,7 @@ export class Request {
         url: string,
         config: AxiosRequestConfig = {}
     ): Promise<RequestResponse> {
-        return this.axios
-            .get(url, config)
-            .then(this.success)
-            .catch(this.error);
+        return this.axios.get(url, config).then(this.success).catch(this.error);
     }
     /**
      * 提交数据

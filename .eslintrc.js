@@ -1,5 +1,3 @@
 module.exports = {
-    extends: [
-        require.resolve('@fmfe/genesis-lint')
-    ]
-}
+    extends: [require.resolve('@fmfe/genesis-lint')]
+};

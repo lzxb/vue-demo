@@ -8,29 +8,22 @@
         "allowJs": true,
         "sourceMap": true,
         "strict": true,
-        "noEmit": true,
+        "noEmit": false,
         "noUnusedLocals": true,
         "skipLibCheck": true,
         "noImplicitAny": false,
         "resolveJsonModule": true,
         "baseUrl": "./",
-        "typeRoots": [
-            "./types/*"
-        ],
+        "declaration": true,
+        "declarationDir": "./types",
         "types": [
             "@types/node"
         ],
         "allowSyntheticDefaultImports": true
     },
-    "ts-node": {
-        "compilerOptions": {
-            "target": "es2018",
-            "module": "commonjs",
-            "moduleResolution": "node",
-            "allowSyntheticDefaultImports": true,
-            "declaration": true,
-            "esModuleInterop": true,
-            "outDir": "../dist"
-        }
-    }
+    "exclude": [
+        "stylelint.config.js",
+        "dist",
+        "types"
+    ]
 }
