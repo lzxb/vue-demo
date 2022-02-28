@@ -1,4 +1,5 @@
 import Vue from 'vue';
+
 import { State } from './store';
 
 /**

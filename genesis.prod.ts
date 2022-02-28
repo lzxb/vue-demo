@@ -1,5 +1,6 @@
 import express from 'express';
-import { ssr, app, startApp } from './genesis';
+
+import { app, ssr, startApp } from './genesis';
 
 /**
  * 生产环境，应用程序我们已经编译好了，所以在这里可以直接创建一个渲染器

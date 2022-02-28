@@ -1,7 +1,8 @@
-import { ClientOptions } from '@fmfe/genesis-core';
 import { createClientApp } from '@fmfe/genesis-app';
+import { ClientOptions } from '@fmfe/genesis-core';
 import Vue from 'vue';
-import { App, createStore, createRouter, createRequest } from './entry-base';
+
+import { App, createRequest, createRouter, createStore } from './entry-base';
 
 /**
  * 客户端入口，需要导出一个方法，并且返回一个 Promise<Vue>

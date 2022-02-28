@@ -1,5 +1,6 @@
 import { Watch } from '@fmfe/genesis-compiler';
-import { ssr, app, startApp } from './genesis';
+
+import { app, ssr, startApp } from './genesis';
 
 const start = async () => {
     /**

@@ -5,3 +5,4 @@
 *.eot
 *.ttf
 *.woff
+dist/**

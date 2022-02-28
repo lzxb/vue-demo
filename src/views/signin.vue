@@ -9,8 +9,9 @@
 </template>
 <script lang="ts">
 import { Component } from 'vue-property-decorator';
-import VHeader from '../components/v-header.vue';
+
 import { BaseVue } from '../base-vue';
+import VHeader from '../components/v-header.vue';
 
 @Component<Signin>({
     components: {
