@@ -14,6 +14,8 @@ npm run start
 ```
 
 ## 更新日志
+- 2022-08
+  - 使用[vue-class-setup](https://github.com/fmfe/vue-class-setup)重写
 - 2022-02
   - 升级[Genesis2.0](https://github.com/fmfe/genesis)版本
   - 能支持全文件类型检查，并且生成类型文件
