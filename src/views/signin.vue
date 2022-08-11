@@ -22,16 +22,7 @@ class Login extends Base {
     public user = new User();
     public name = '';
     public async submit() {
-        if (!this.name) {
-            return alert('请输入昵称');
-        }
-        const res = await this.request.post('/api/signin', { name: this.name });
-        if (res.success) {
-            this.user.signin(this.name);
-            this.router.back();
-            return;
-        }
-        alert('登录失败');
+        this.user.signin(this.name);
     }
 }
 export default defineComponent({

@@ -89,9 +89,21 @@ export class User extends Base {
     /**
      * 登录用户
      */
-    public signin(name: string) {
-        this.store.commit('signin', name);
+    public async signin(name: string) {
+        if (!name) {
+            return alert('请输入昵称');
+        }
+        const res = await this.request.post('/api/signin', { name });
+        if (res.success) {
+            this.store.commit('signin', name);
+            this.router.back();
+            return;
+        }
+        alert('登录失败');
     }
+    /**
+     * 退出登录
+     */
     public async signout() {
         const res = await this.request.post('/api/signout');
         if (res.success) {
