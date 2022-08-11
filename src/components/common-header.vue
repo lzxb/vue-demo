@@ -3,18 +3,14 @@
         <h2 v-if="title" class="title">{{ title }}</h2>
     </header>
 </template>
-<script lang="ts">
-import Vue from 'vue';
-import { Component, Prop } from 'vue-property-decorator';
-
-@Component<VHeader>({})
-export default class VHeader extends Vue {
-    @Prop({
+<script lang="ts"></script>
+<script lang="ts" setup>
+defineProps({
+    title: {
         type: String,
         default: ''
-    })
-    public title!: string;
-}
+    }
+});
 </script>
 <style lang="less" scoped>
 .header {
@@ -22,6 +18,7 @@ export default class VHeader extends Vue {
     line-height: 50px;
     border-bottom: 1px solid #ccc;
 }
+
 .title {
     margin: 0;
     font-size: 18px;

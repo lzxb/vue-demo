@@ -1,29 +1,25 @@
 <template>
     <div>
-        <VHeader title="登录" />
+        <CommonHeader title="登录" />
         <form @submit.prevent>
-            <input v-model="name" placeholder="请输入你的昵称" />
-            <button @click="submit">登录</button>
+            <input v-model="login.name" placeholder="请输入你的昵称" />
+            <button @click="login.submit()">登录</button>
         </form>
     </div>
 </template>
 <script lang="ts">
-import { Component } from 'vue-property-decorator';
+import { defineComponent } from 'vue';
+import { Setup } from 'vue-class-setup';
 
-import { BaseVue } from '../base-vue';
-import VHeader from '../components/v-header.vue';
+import CommonHeader from '../components/common-header.vue';
+import { Base, User } from '../setup';
 
-@Component<Signin>({
-    components: {
-        VHeader
-    },
-    metaInfo() {
-        return {
-            title: '登录'
-        };
-    }
-})
-export default class Signin extends BaseVue {
+/**
+ * 编写一个登录的类
+ */
+@Setup
+class Login extends Base {
+    public user = new User();
     public name = '';
     public async submit() {
         if (!this.name) {
@@ -31,11 +27,21 @@ export default class Signin extends BaseVue {
         }
         const res = await this.request.post('/api/signin', { name: this.name });
         if (res.success) {
-            this.signin(this.name);
-            this.$router.back();
+            this.user.signin(this.name);
+            this.router.back();
             return;
         }
         alert('登录失败');
     }
 }
+export default defineComponent({
+    metaInfo() {
+        return {
+            title: `登录`
+        };
+    }
+});
+</script>
+<script lang="ts" setup>
+const login = new Login();
 </script>

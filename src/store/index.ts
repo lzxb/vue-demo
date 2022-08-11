@@ -1,5 +1,5 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
+import Vue, { getCurrentInstance } from 'vue';
+import Vuex, { Store } from 'vuex';
 
 import { Request } from '../request';
 
@@ -52,3 +52,12 @@ export const createStore = (request: Request) => {
         }
     });
 };
+
+export function useStore(): Store<State> {
+    const vm = getCurrentInstance();
+    if (!vm) {
+        throw new Error('Please use in setup');
+    }
+
+    return vm.proxy.$store;
+}

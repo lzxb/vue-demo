@@ -1,16 +1,16 @@
 <template>
     <div>
-        <VHeader title="首页" />
-        <p v-if="!isLogin">
+        <CommonHeader title="首页" />
+        <p v-if="!home.isLogin">
             <router-link to="/signin">登录</router-link>后发表你的微博
         </p>
         <div v-else>
-            <input v-model="blog" />
-            <button @click="post">发表微博</button>
-            <button @click="signout">退出登录</button>
+            <input v-model="home.blog" />
+            <button @click="home.post()">发表微博</button>
+            <button @click="home.user.signout()">退出登录</button>
         </div>
         <ul>
-            <li v-for="item in blogList" :key="item.id">
+            <li v-for="item in home.blogList.data" :key="item.id">
                 {{ formatDate(item.createTime) }} {{ item.author }} 发表了
                 {{ item.content }}
             </li>
@@ -18,54 +18,53 @@
     </div>
 </template>
 <script lang="ts">
-import { Component } from 'vue-property-decorator';
+import { defineComponent } from 'vue';
+import { Hook, Setup } from 'vue-class-setup';
 
-import { BaseVue } from '../base-vue';
-import VHeader from '../components/v-header.vue';
+import CommonHeader from '../components/common-header.vue';
+import { Base, BlogList, User } from '../setup';
 import { formatDate } from '../utils/index';
 
-@Component<Home>({
-    components: {
-        VHeader
-    },
-
-    metaInfo() {
-        return {
-            title: '首页'
-        };
-    }
-})
-export default class Home extends BaseVue {
+@Setup
+class Home extends Base {
+    public user: User;
+    public blogList = new BlogList();
     public blog = '';
-    public formatDate = formatDate;
-    public get isLogin() {
-        return !!this.state.user.name;
-    }
-    public get blogList() {
-        return this.state.blogList;
+    public constructor() {
+        super();
+        this.user = new User();
     }
     /**
      * 发表微博
      */
     public async post() {
-        const ok = await this.postBlog(this.blog);
+        const ok = await this.blogList.postBlog(this.blog);
         if (ok) {
             this.blog = '';
         }
     }
-    public async signout() {
-        const res = await this.request.post('/api/signout');
-        if (res.success) {
-            super.signout();
-            return;
-        }
-        alert('退出失败');
+    public get isLogin() {
+        return this.user.isLogin;
     }
-    /**
-     * 在服务器端，获取微博列表数据
-     */
-    public serverPrefetch() {
-        return Promise.all([this.getCurrentUser(), this.getBlogList()]);
+    @Hook('serverPrefetch')
+    public getData() {
+        return Promise.all([
+            this.user.getCurrentUser(),
+            this.blogList.getBlogList()
+        ]);
     }
 }
+
+export default defineComponent({
+    metaInfo() {
+        const home: Home = this.home;
+        return {
+            title: `首页-${home.blogList.data.length}`
+        };
+    }
+});
+</script>
+<script lang="ts" setup>
+const home = new Home();
+defineExpose({ home });
 </script>

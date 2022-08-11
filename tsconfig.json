@@ -1,5 +1,9 @@
 {
+    "vueCompilerOptions": {
+        "vue": "2.7"
+    },
     "compilerOptions": {
+        "jsx": "preserve",
         "target": "esnext",
         "module": "esnext",
         "moduleResolution": "node",

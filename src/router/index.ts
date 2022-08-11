@@ -1,4 +1,4 @@
-import Vue from 'vue';
+import Vue, { getCurrentInstance } from 'vue';
 import Router from 'vue-router';
 
 Vue.use(Router);
@@ -19,8 +19,17 @@ export const createRouter = () => {
                 component: () =>
                     import(
                         /* webpackChunkName: "signin" */ '../views/signin.vue'
-                    )
+                    ).then((m) => m.default)
             }
         ]
     });
 };
+
+export function useRouter() {
+    const vm = getCurrentInstance();
+    if (!vm) {
+        throw new Error('Please use in setup');
+    }
+
+    return vm.proxy.$router;
+}

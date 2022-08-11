@@ -1,6 +1,6 @@
 import { RenderContext } from '@fmfe/genesis-core';
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
-import Vue from 'vue';
+import Vue, { getCurrentInstance } from 'vue';
 
 export interface RequestResponse {
     success: boolean;
@@ -116,6 +116,18 @@ export class Request {
 export const createRequest = (renderContext?: RenderContext) => {
     return new Request(renderContext);
 };
+
+export function useRequest(): Request {
+    const vm = getCurrentInstance();
+    if (!vm) {
+        throw new Error('Please use in setup');
+    }
+    const request = vm.proxy.$root.$options.request;
+    if (!request) {
+        throw new Error('Vue root component does not inject request object');
+    }
+    return request;
+}
 
 declare module 'vue/types/options' {
     interface ComponentOptions<V extends Vue> {
