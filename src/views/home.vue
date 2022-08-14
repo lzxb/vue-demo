@@ -18,8 +18,8 @@
     </div>
 </template>
 <script lang="ts">
-import { defineComponent } from 'vue';
-import { Hook, Setup } from 'vue-class-setup';
+import { defineComponent, onServerPrefetch } from 'vue';
+import { PassOnTo, Setup } from 'vue-class-setup';
 
 import CommonHeader from '../components/common-header.vue';
 import { Base, BlogList, User } from '../setup';
@@ -46,9 +46,9 @@ class Home extends Base {
     public get isLogin() {
         return this.user.isLogin;
     }
-    @Hook('serverPrefetch')
-    public getData() {
-        return Promise.all([
+    @PassOnTo(onServerPrefetch)
+    public async getData() {
+        await Promise.all([
             this.user.getCurrentUser(),
             this.blogList.getBlogList()
         ]);

@@ -12,6 +12,17 @@ export class Base {
     protected store = useStore();
     protected request = useRequest();
     protected router = useRouter();
+    public constructor() {
+        Object.defineProperty(this, 'store', {
+            enumerable: false
+        });
+        Object.defineProperty(this, 'request', {
+            enumerable: false
+        });
+        Object.defineProperty(this, 'router', {
+            enumerable: false
+        });
+    }
 }
 
 /**
