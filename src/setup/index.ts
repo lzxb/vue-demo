@@ -1,4 +1,4 @@
-import { Setup } from 'vue-class-setup';
+import { Define, Setup } from 'vue-class-setup';
 
 import { useRequest } from '../request';
 import { useRouter } from '../router';
@@ -8,11 +8,12 @@ import { useStore } from '../store';
  * 编写一个基本类，在封装其它业务的时候继承它来使用
  */
 @Setup
-export class Base {
+export class Base extends Define {
     protected store = useStore();
     protected request = useRequest();
     protected router = useRouter();
     public constructor() {
+        super();
         Object.defineProperty(this, 'store', {
             enumerable: false
         });
