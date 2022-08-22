@@ -1,16 +1,16 @@
 <template>
     <div>
         <CommonHeader title="首页" />
-        <p v-if="!home.isLogin">
+        <p v-if="!isLogin">
             <router-link to="/signin">登录</router-link>后发表你的微博
         </p>
         <div v-else>
-            <input v-model="home.blog" />
-            <button @click="home.post()">发表微博</button>
-            <button @click="home.user.signout()">退出登录</button>
+            <input v-model="blog" />
+            <button @click="post">发表微博</button>
+            <button @click="user.signout()">退出登录</button>
         </div>
         <ul>
-            <li v-for="item in home.blogList.data" :key="item.id">
+            <li v-for="item in blogList.data" :key="item.id">
                 {{ formatDate(item.createTime) }} {{ item.author }} 发表了
                 {{ item.content }}
             </li>
@@ -46,6 +46,7 @@ class Home extends Base {
     public get isLogin() {
         return this.user.isLogin;
     }
+    // @ts-ignore
     @PassOnTo(onServerPrefetch)
     public async getData() {
         await Promise.all([
@@ -56,15 +57,12 @@ class Home extends Base {
 }
 
 export default defineComponent({
-    metaInfo() {
-        const home: Home = this.home;
+    metaInfo(this: Home) {
         return {
-            title: `首页-${home.blogList.data.length}`
+            title: `首页-${this.blogList.data.length}`
         };
-    }
+    },
+    ...Home.inject()
 });
 </script>
-<script lang="ts" setup>
-const home = new Home();
-defineExpose({ home });
-</script>
+<script lang="ts" setup></script>

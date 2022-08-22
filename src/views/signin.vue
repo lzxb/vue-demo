@@ -2,8 +2,8 @@
     <div>
         <CommonHeader title="登录" />
         <form @submit.prevent>
-            <input v-model="login.name" placeholder="请输入你的昵称" />
-            <button @click="login.submit()">登录</button>
+            <input v-model="name" placeholder="请输入你的昵称" />
+            <button @click="submit">登录</button>
         </form>
     </div>
 </template>
@@ -30,9 +30,8 @@ export default defineComponent({
         return {
             title: `登录`
         };
-    }
+    },
+    ...Login.inject()
 });
 </script>
-<script lang="ts" setup>
-const login = new Login();
-</script>
+<script lang="ts" setup></script>

@@ -3,14 +3,27 @@
         <h2 v-if="title" class="title">{{ title }}</h2>
     </header>
 </template>
-<script lang="ts"></script>
-<script lang="ts" setup>
-defineProps({
-    title: {
-        type: String,
-        default: ''
-    }
+<script lang="ts">
+import { defineComponent } from 'vue';
+import { Define, Setup } from 'vue-class-setup';
+
+@Setup
+class App extends Define<Props> {
+    /**
+     * 设置默认的 props title
+     */
+    public readonly title = '';
+}
+
+export default defineComponent({
+    ...App.inject()
 });
+</script>
+<script lang="ts" setup>
+export interface Props {
+    title?: string;
+}
+defineProps<Props>();
 </script>
 <style lang="less" scoped>
 .header {
