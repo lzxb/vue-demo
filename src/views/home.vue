@@ -49,7 +49,6 @@ class Home extends Base {
     public get isLogin() {
         return this.user.isLogin;
     }
-    // @ts-ignore
     @PassOnTo(onServerPrefetch)
     public async getData() {
         await Promise.all([
