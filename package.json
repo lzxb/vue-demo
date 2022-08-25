@@ -18,9 +18,9 @@
     "author": "",
     "license": "MIT",
     "devDependencies": {
-        "@fmfe/genesis-app": "2.1.35",
-        "@fmfe/genesis-compiler": "2.1.35",
-        "@fmfe/genesis-lint": "2.1.35",
+        "@fmfe/genesis-app": "2.2.0",
+        "@fmfe/genesis-compiler": "2.2.0",
+        "@fmfe/genesis-lint": "2.2.0",
         "@types/cookie-parser": "1.4.2",
         "@types/express": "^4.17.6",
         "axios": "^0.27.2",
@@ -30,7 +30,7 @@
         "vuex": "^3.6.2"
     },
     "dependencies": {
-        "@fmfe/genesis-core": "2.1.35",
+        "@fmfe/genesis-core": "2.2.0",
         "body-parser": "^1.19.2",
         "cookie-parser": "^1.4.6",
         "express": "^4.17.3"
