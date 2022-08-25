@@ -12,6 +12,7 @@
         "esModuleInterop": true,
         "outDir": "./dist"
     },
+    "include": ["."],
     "exclude": [
         "dist",
         "types",

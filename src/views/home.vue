@@ -10,7 +10,7 @@
             <button @click="user.signout()">退出登录</button>
         </div>
         <ul>
-            <li v-for="item in blogList.data" :key="item.id">
+            <li v-for="item in list" :key="item.id">
                 {{ formatDate(item.createTime) }} {{ item.author }} 发表了
                 {{ item.content }}
             </li>
@@ -33,6 +33,9 @@ class Home extends Base {
     public constructor() {
         super();
         this.user = new User();
+    }
+    public get list() {
+        return this.blogList.data;
     }
     /**
      * 发表微博
