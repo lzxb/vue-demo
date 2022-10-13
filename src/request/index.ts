@@ -45,7 +45,8 @@ export class Request {
         this.axios = axios.create({
             headers,
             // 在服务器端请求的时候，需要设置请求的基本地址
-            baseURL: 'http://localhost:3000',
+            baseURL:
+                process.env.VUE_ENV === 'server' ? 'http://localhost:3000' : '',
             timeout: 5000,
             validateStatus: () => true
         });
