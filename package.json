@@ -8,19 +8,19 @@
         "build": "rm -rf dist types && npm run build:dts && npm run build:vue && npm run build:node",
         "build:node": "NODE_ENV=production genesis-tsc --build tsconfig.node.json",
         "build:vue": "NODE_ENV=production genesis-ts-node --project=./tsconfig.node.json genesis.build",
-        "build:dts": "genesis-vue-tsc --declaration --emitDeclarationOnly",
-        "type-check": "genesis-vue-tsc --noEmit",
+        "build:dts": "npx vue-tsc --declaration --emitDeclarationOnly",
+        "type-check": "npx vue-tsc --noEmit",
         "start": "NODE_ENV=production node dist/genesis.prod",
         "lint": "npm run lint:js && npm run lint:css",
         "lint:js": "genesis-eslint . --ext .js,.ts,.vue --fix",
-        "lint:css": "genesis-stylelint **/*.{css,less,vue} --fix"
+        "lint:css": "genesis-stylelint **/*.{css,less,vue} --fix --allow-empty-input"
     },
     "author": "",
     "license": "MIT",
     "devDependencies": {
-        "@fmfe/genesis-app": "2.2.1",
-        "@fmfe/genesis-compiler": "2.2.1",
-        "@fmfe/genesis-lint": "2.2.1",
+        "@fmfe/genesis-app": "2.6.1",
+        "@fmfe/genesis-compiler": "2.6.1",
+        "@fmfe/genesis-lint": "2.6.1",
         "@types/cookie-parser": "1.4.2",
         "@types/express": "^4.17.6",
         "axios": "^0.27.2",
@@ -30,7 +30,7 @@
         "vuex": "^3.6.2"
     },
     "dependencies": {
-        "@fmfe/genesis-core": "2.2.1",
+        "@fmfe/genesis-core": "2.6.1",
         "body-parser": "^1.19.2",
         "cookie-parser": "^1.4.6",
         "express": "^4.17.3"
