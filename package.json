@@ -18,12 +18,12 @@
     "author": "",
     "license": "MIT",
     "resolutions": {
-        "**/vue-template-compiler": "2.7.14"
+        "**/vue-template-compiler": "2.7.16"
     },
     "devDependencies": {
-        "@fmfe/genesis-app": "2.6.1",
-        "@fmfe/genesis-compiler": "2.6.1",
-        "@fmfe/genesis-lint": "2.6.1",
+        "@fmfe/genesis-app": "2.7.21",
+        "@fmfe/genesis-compiler": "2.7.21",
+        "@fmfe/genesis-lint": "2.7.21",
         "@types/cookie-parser": "1.4.2",
         "@types/express": "^4.17.6",
         "axios": "^0.27.2",
@@ -33,10 +33,11 @@
         "vuex": "^3.6.2"
     },
     "dependencies": {
-        "@fmfe/genesis-core": "2.6.1",
-        "body-parser": "^1.19.2",
-        "cookie-parser": "^1.4.6",
-        "express": "^4.18.2"
+        "vue": "2.7.16",
+        "@fmfe/genesis-core": "2.7.21",
+        "body-parser": "^1.20.3",
+        "cookie-parser": "^1.4.7",
+        "express": "^4.21.2"
     },
     "husky": {
         "hooks": {

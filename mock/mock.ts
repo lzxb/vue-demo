@@ -55,6 +55,7 @@ export const initMock = (app: express.Application) => {
      */
     app.post(
         '/api/signin',
+        // @ts-ignore
         cookieParser(),
         bodyParser.json(),
         (req, res, next) => {
@@ -83,6 +84,7 @@ export const initMock = (app: express.Application) => {
     /**
      * 用户退出
      */
+    // @ts-ignore
     app.post('/api/signout', cookieParser(), (req, res, next) => {
         res.clearCookie('name');
         res.json({
@@ -95,6 +97,7 @@ export const initMock = (app: express.Application) => {
     /**
      * 获取用户昵称
      */
+    // @ts-ignore
     app.get('/api/current-user', cookieParser(), (req, res) => {
         const { name } = req.cookies;
         if (!name) {
